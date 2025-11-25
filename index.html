@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindEase</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__media">
+        <img
+          src="logo.svg"
+          alt="MindEase logo combining a brain and heart"
+          class="hero__logo"
+        />
+      </div>
+      <div class="hero__content">
+        <p class="eyebrow">MindEase</p>
+        <h1>Track your emotional, mental, and personal progress.</h1>
+        <p class="lead">
+          A calming space to reflect, assess, and grow with privacy-first
+          tracking tools.
+        </p>
+        <button class="cta">Start Your MindEase Journey &mdash; It's Free</button>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="card about-card">
+        <div class="about-content">
+          <p class="eyebrow eyebrow--centered">About Us</p>
+          <h2>What is Mind Ease?</h2>
+          <p>
+            Mind Ease is a student-focused mental wellness platform that
+            supports emotional growth, stress relief, and healthy academic life.
+            It blends technology with psychology to make mental health care
+            accessible, stigma-free, and personalized for every student.
+          </p>
+          <h3>Why was it created?</h3>
+          <p>
+            Every mind deserves ease. Students navigate academic pressure,
+            emotional challenge, and constant digital noise. Mind Ease
+            represents a space where the mind can slow down and regain balance.
+          </p>
+          <h3>Mission &amp; Vision</h3>
+          <p>
+            To empower students to prioritize and improve their mental wellbeing
+            by providing accessible, confidential, and engaging tools for
+            emotional support, self-awareness, and balanced living.
+          </p>
+        </div>
+      </section>
+
+      <section id="mood-tracker" class="card">
+        <div class="card__header">
+          <h2>Daily Mood Log</h2>
+          <p>Capture your feelings and spot trends with ease.</p>
+        </div>
+        <div class="mood-input">
+          <label>How do you feel today?</label>
+          <div class="mood-options" role="group" aria-label="Mood selector">
+            <button class="mood-option" data-mood="Excellent" data-icon="😊">
+              😊
+            </button>
+            <button class="mood-option" data-mood="Good" data-icon="🙂">🙂</button>
+            <button class="mood-option" data-mood="Okay" data-icon="😐">😐</button>
+            <button class="mood-option" data-mood="Stressed" data-icon="😟">
+              😟
+            </button>
+            <button class="mood-option" data-mood="Anxious" data-icon="😰">
+              😰
+            </button>
+            <button class="mood-option" data-mood="Sad" data-icon="😢">😢</button>
+          </div>
+          <textarea
+            id="mood-note"
+            placeholder="Optional note (e.g., Finished a big project)"
+          ></textarea>
+          <div class="mood-actions">
+            <input type="date" id="mood-date" />
+            <button class="secondary" id="save-mood">Save Mood</button>
+          </div>
+        </div>
+        <div class="mood-visuals">
+          <div class="calendar placeholder">
+            Calendar View Placeholder (auto-colored soon)
+          </div>
+          <div class="trend placeholder">
+            Trend Chart Placeholder (last 30 days)
+          </div>
+        </div>
+        <div class="history-card">
+          <h3>Recent Entries</h3>
+          <ul class="history-list" id="mood-history"></ul>
+        </div>
+      </section>
+
+      <section id="assessments" class="card">
+        <div class="card__header">
+          <h2>Mental Health Self-Assessments</h2>
+          <p>Run quick check-ins on stress, burnout, and anxiety.</p>
+        </div>
+        <div class="assessments-grid" id="assessment-buttons">
+          <article class="assessment">
+            <h3>Stress Level Assessment</h3>
+            <p>5 short questions &mdash; Likert scale responses.</p>
+            <button class="secondary" data-quiz="stress">
+              Begin Stress Quiz
+            </button>
+          </article>
+          <article class="assessment">
+            <h3>Burnout Score</h3>
+            <p>Gauge exhaustion and detachment in minutes.</p>
+            <button class="secondary" data-quiz="burnout">
+              Start Burnout Quiz
+            </button>
+          </article>
+          <article class="assessment">
+            <h3>Anxiety &amp; Worry Tally</h3>
+            <p>Track frequency of anxious thought patterns.</p>
+            <button class="secondary" data-quiz="anxiety">
+              Take Anxiety Quiz
+            </button>
+          </article>
+        </div>
+        <div class="history-card">
+          <h3>Assessment History</h3>
+          <ul class="history-list" id="assessment-history"></ul>
+        </div>
+      </section>
+
+      <section id="habit-goal" class="card">
+        <div class="card__header">
+          <h2>Habits &amp; Goals</h2>
+          <p>Build routines and see your momentum.</p>
+        </div>
+        <div class="habit-goal-grid">
+          <article class="habit-manager">
+            <h3>Habits</h3>
+            <form class="inline-form" id="habit-form">
+              <input
+                type="text"
+                id="habit-input"
+                placeholder="Add a new habit"
+                required
+              />
+              <button type="submit" class="secondary">Add Habit</button>
+            </form>
+            <ul class="habit-list" id="habit-list"></ul>
+          </article>
+          <article class="goal-manager">
+            <h3>Goals</h3>
+            <form class="inline-form" id="goal-form">
+              <input
+                type="text"
+                id="goal-input"
+                placeholder="Goal (e.g., Save $500)"
+                required
+              />
+              <input type="date" id="goal-date" required />
+              <button type="submit" class="secondary">Add Goal</button>
+            </form>
+            <div id="goal-list" class="goal-list"></div>
+          </article>
+        </div>
+      </section>
+      <section id="contact" class="card contact-card">
+        <div class="contact-block">
+          <p class="eyebrow">Contact Us</p>
+          <p>
+            Have a question or want to know more about Mind Ease? Feel free to
+            reach out!
+          </p>
+          <p><strong>Email:</strong> mindeasecare@gmail.com</p>
+          <p><strong>Location:</strong> JIS University, Kolkata, West Bengal 700109</p>
+        </div>
+        <div class="contact-block">
+          <p class="eyebrow">Team Behind MindEase</p>
+          <ul class="team-list">
+            <li>Parama Khan &mdash; Content Writer</li>
+            <li>Sana Sarkar &mdash; PPT Designer</li>
+            <li>Shreya Mukherjee &mdash; Research Head &amp; Report Writer</li>
+            <li>Swastika Das &mdash; Website Developer</li>
+            <li>Tanisha Anand &mdash; Content Writer</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <div id="assessment-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal__content" role="dialog" aria-modal="true">
+        <button class="modal__close" aria-label="Close assessment">&times;</button>
+        <h3 id="modal-title"></h3>
+        <form id="assessment-form"></form>
+      </div>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
+
